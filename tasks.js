@@ -19,4 +19,15 @@ let side1 = 15;
 let side2 = 25;
 console.log(total * 100 - side1 * side2);//625 кв м
 
+//задача 3. про овалы
+let OvalBig = 15; //dm^2
+let cut = 600; // cm^2
+console.log('диаметр овала после обрезки:' + (OvalBig - (cut / 100))); //9dm^2
+
+//задача 4. Поменять переменные, чтобы Х всегда был меньше Y
+let x = 20;
+let y = 11;
+
+x < y ? true : (x = y, y = ++y);
+console.log('x=' + x, 'y=' + y);
 
