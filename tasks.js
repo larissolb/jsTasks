@@ -17,7 +17,7 @@ console.log(a > c ? "width more" : "height more"); //height more
 let total = 10;
 let side1 = 15;
 let side2 = 25;
-console.log(total * 100 - side1 * side2);//625 кв м
+console.log(total * 100 % side1 * side2);//250 кв м
 
 //задача 3. про овалы
 let OvalBig = 15; //dm^2
