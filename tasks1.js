@@ -2,17 +2,18 @@
 /*Есть три вершины X, Y, Z.
 Их координаты (x1, x2), (y1, y2), (z1, z2) заданы как целые числа.
 Нужно определить - является ли треугольник с заданными координатами прямоугольным.*/
-let x1 = 5, x2 = 3, y1 = 5, y2 = 5, z1 = 5, z2 = 5;
-let lengthVector = Math.sqrt(Math.pow(x2 - x1) + Math.pow(y2 - y1));
-let lengthXY = Math.sqrt(Math.pow(y1 - x1) + Math.pow(y2 - x2)); 
-let lengthYZ = Math.sqrt(Math.pow(z1 - y1) + Math.pow(z2 - y2)); 
-let lengthXZ = Math.sqrt(Math.pow(z1 - x1) + Math.pow(z2 - x2));
 //с^2=a^2+b^2
-if (Math.pow(lengthVector) === (Math.pow(lengthXY) + Math.pow(lengthXZ))) { 
+let x1 = 2, x2 = 2, y1 = 2, y2 = 4, z1 = 2, z2 = 4;
+let lengthVector = Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2);
+let lengthXY = Math.pow((y1 - x1),2) + Math.pow((y2 - x2),2); 
+let lengthYZ = Math.pow((z1 - y1),2) + Math.pow((z2 - y2),2); 
+let lengthXZ = Math.pow((z1 - x1),2) + Math.pow((z2 - x2),2);
+
+if (lengthVector === (lengthXY + lengthXZ)) { 
      console.log('треугольник прямоугольный');
-} else if (Math.pow(lengthVector) === (Math.pow(lengthXY) + Math.pow(lengthYZ))) {
+} else if (lengthVector === (lengthXY + lengthYZ)) {
      console.log('треугольник прямоугольный');
- } else if (Math.pow(lengthVector) === (Math.pow(lengthYZ) + Math.pow(lengthXZ))) {
+ } else if (lengthVector === (lengthYZ + lengthXZ)) {
     console.log('треугольник прямоугольный');
  }
 else {
