@@ -17,17 +17,17 @@ if (lengthVector === (lengthXY + lengthXZ)) {
     console.log('треугольник прямоугольный');
  }
 else {
-    console.log('треугольник не прямоугольный')    
+    console.log('треугольник не прямоугольный');    
  }
 ////Задача 2*. Вывести в консоль название времени года в зав-ти от тек.месяца
 let monthNum = new Date().getMonth();
-if (monthNum <= 2) {
+if (monthNum <= 1 || monthNum === 11) {
   console.log('Winter');
-} else if (monthNum <= 5) {
+} else if (monthNum <= 4) { 
     console.log('Spring');
-} else if (monthNum <= 8) {
+} else if (monthNum <= 7) {
   console.log('Summer');
-} else if (monthNum <= 11) {
+} else if (monthNum <= 10) { 
   console.log('Autumn');
 } else {
     console.log("Error");
