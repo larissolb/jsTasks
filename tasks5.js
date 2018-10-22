@@ -16,5 +16,4 @@ for (let i = 0; i < N; i++) {
   }
 }
   }
-
 buildField(prompt('задайте кол-во ячеек в поле'));
