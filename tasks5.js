@@ -5,7 +5,6 @@ let rowDiv = document.createElement('div');
     rowDiv.id = 'row';
     let script = document.getElementsByTagName('script')[0];
     document.body.insertBefore(rowDiv, script);
-// let N = 2;
 for (let i = 0; i < N; i++) {
     let colDiv = document.createElement('div');
     colDiv.id = 'col';
