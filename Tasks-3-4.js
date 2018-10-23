@@ -41,13 +41,11 @@ console.log("Task 3:" +"исходный", arrFirst, "копия", cloneArray(ar
 
 let n = 2;
 let m = 2;
-let sum = 0;
+
 function sumNM(n, m) {
 if(n <= m) {
-    sum += n;
-    sum = sumNM(n + 1, m);
 }
-    return sum;
+    return (n+1, m);
 }
 console.log('Task4: sumfinal', sumNM(n, m));
  
@@ -121,13 +119,13 @@ console.log('Новый мэр города', city2.name, city2.mayor);
 let string = 'some sentences';
 let underString = 'sentences';
 
-function search(str, underStr) {
+function search(str, underStr) { 
     for (let i = 0; i < str.length; ) {
         if (str.indexOf(underStr, i) !== -1){
             let num = str.indexOf(underStr, i);
             i = num + 1;
         } else {
-            break;
+            return;
         }
     }
 }
@@ -136,15 +134,12 @@ function search(str, underStr) {
 //Написать функцию - конвертер строки. Возможности: перевод всех символов в верхний регистр,
 //перевод всех символов в нижний регистр;
 
-function ConvertSymb(anyText, register) {
-   if(register === 'нижний') {
-       anyText.toLowerCase();
-       console.log((anyText.toLowerCase())); 
-   } else if (register === 'верхний') {
-        anyText.toUpperCase();
-        console.log(anyText.toUpperCase()); 
-   } else {
-       ConvertSymb(prompt('Нужно указать только слово "верхний" либо "нижний"'));
-   }
+function converter(string, registr) {
+    if(register ==0 ) {
+        string = string.toLowerCase();
+        return string;
+    }
+    string = string.toUpperCase();
+    return string;
 }
-ConvertSymb(prompt('Напишите текст, который нужно конвертировать'),prompt('Укажите регистр символов: нижний/верхний'));
+
