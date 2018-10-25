@@ -1,0 +1,27 @@
+div {
+  display: none;
+  background:#F0FFF0;
+  height: 30px;
+  width: 200px;
+  border: 5px double darkgreen;
+  text-align: center;
+  padding-top: 2vh;
+  margin-top: 30px;
+  transform: rotate(15deg);
+  transition: top 1s ease-out 0.5s;
+  
+}
+
+fieldset {
+  border: none;
+  font-size: 15px;
+}
+
+#hide {
+  display: none;
+}
+fieldset:hover {
+ font-size: 16px; 
+ text-decoration: underline;
+ color: blue; 
+}
