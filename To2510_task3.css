@@ -1,0 +1,20 @@
+table {
+  border: 3px solid white;
+  background: lightblue;
+  text-align: center;
+  margin: 2px;
+}
+
+td, th {
+  border: 2px solid whitesmoke;
+}
+th:hover {
+    background: cadetblue;
+    cursor: pointer;
+}
+
+.head {
+  background: lightblue;
+  font-weight: bold;
+  text-transform: uppercase;
+}
