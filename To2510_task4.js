@@ -27,7 +27,7 @@ for (let i = 0; i < N; i++) {
   //Рандомное распределение призов
 function generatePrize(cells, prizeCount) {
     for (let i = 0; i <  prizeCount; i++){
-      cells[Math.round(getRandom(0, cells.length))].innerHTML= 'prize'; 
+      cells[Math.round(getRandom(0, cells.length))].innerHTML= ' '; 
       }
 }
 function getRandom(min, max) {
@@ -37,25 +37,22 @@ generatePrize(cell, 3); // размещено 3 случайных приза
 
 //Предоставление 3-х попыток пользователю
 let field = document.getElementById('field');
-// let attempts = 3; //кол-во попыток
-// field.onclick = function() { //счетчик количества кликов
-// if(attempts > 0) {
-//     attempts--;
-//     document.querySelector(".counter").innerHTML = ('Количество оставшихся попыток: ' + attempts); //вывод информации о кол-ве оставшихся попыток
-// } else {
-//   return alert('Game over'); //сообщение для пользователя о том, что игра окончена
-// }
-// }
- 
- field.onclick = function (event) {
-   
-  if(event.target.innerHTML === ('prize')) {
-     event.target.style.background = "blue";
+let attempts = 3; //кол-во попыток
+field.onclick = function(event) {//счетчик количества кликов
+if(attempts > 0) {
+    attempts--;
+    document.querySelector(".counter").innerHTML = ('Количество оставшихся попыток: ' + attempts); //вывод информации о кол-ве оставшихся попыток
+ if(event.target.innerHTML === (' ')) { //если поле, на которое наведено содержит то же, что ячейка приза, то
+     event.target.innerHTML = "prize!"; //написать слово приз 
+      event.target.style.background = "blue"; //закрасить синим цветом
      // alert("prize!");
     } else {
-      event.target.style.background = "red";
+      event.target.style.background = "red"; //если не совпадает - закрасить красным цветом
    }
-      
- }
 
+} else {
+  return alert('Game over'); //сообщение для пользователя о том, что игра окончена
+}
+}
+ 
 }(window));
