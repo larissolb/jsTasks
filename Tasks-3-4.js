@@ -14,9 +14,12 @@ Author: Larisa Fasolya
 "если передали - 3, то 3 дня" и т.д).*/
 
 function printDay(d) {
-    if ((d % 10) === 1) {
+    if (d>10 & d<20) {
+        console.log('Task 1:', d, "дней");
+    }   
+    else if ((d % 10) === 1) {
         console.log ('Task 1:', d, 'день');
-    } else if ((d % 10) === 2) {
+    } else if ((d % 10) === 2 ||(d % 10) === 3 || (d % 10) === 4) {
         console.log ('Task 1:', d, 'дня');
     } else {
          console.log ('Task 1:', d, 'дней');
