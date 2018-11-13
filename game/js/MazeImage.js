@@ -1,7 +1,8 @@
 class MazeImage {
     constructor() {
         this._path = null;
-        this._coord = null;
+//        this._coord = null;
+        this._coord = [];
     }
 
     set path(value){

@@ -8,11 +8,10 @@ player.coord = [448, 15];
 
 let bonus = new MazeImage();
 bonus.path = 'img/bonus.png';
-bonus.coord =[490,15];
-//        [getRandom(0,966), getRandom(0,966)]; 
-//function getRandom(min, max) {
-//    return Math.random() * (max-min) + min;
-//    };
+bonus.coord =[getRandom(0, 966), getRandom(0, 966)]; // 23 78
+function getRandom(min, max) {
+    return Math.random() * (max-min) + min;
+}
 
 let game =  new Game(maze, player, bonus);
 game.initStartPos('maze');

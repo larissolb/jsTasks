@@ -1,7 +1,7 @@
-let content, firstCol = 1,
+let content,   firstCol = 1,
                secondCol = 1,
                thirdCol = 1;
-           window.onload = function () {
+               window.onload = function () {
                content = document.getElementById("content");
            };
 
