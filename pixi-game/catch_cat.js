@@ -6,7 +6,7 @@ let figuresAmount = 0; //счетчик созданных котов
 let figure = []; //массив хранящий котов
 
 let model = { //модель игры
-        createCanvas: function() {
+    createCanvas: function() {
         field = new PIXI.Application(width, height); //создаем поле для игры
         document.body.appendChild(field.view); //вывод на экран для пользователя
     },
@@ -23,9 +23,9 @@ let model = { //модель игры
         cat.num = figuresAmount; //порядковый номер кошака
         figure.push(cat); //отправка в массив
         field.stage.addChild(cat); //чтобы кот появился на экране, в игре
-        cat.on('pointerdown', controller.clearFigure); // удаление кота при клике
+        cat.on('pointerdown', controller.clearFigure.bind(cat));  // удаление кота при клике
      },
-     gameOver: function() {
+    gameOver: function() {
         let style = new PIXI.TextStyle({ //стили текста
             fill: '0xffffff',
             fontSize: 36,
@@ -39,7 +39,7 @@ let model = { //модель игры
     }
 };
 
-console.log(model, figure);
+//console.log(model, figure);
 
 
 let play = {
@@ -55,21 +55,20 @@ let play = {
                 if (figure[i].position.y > height && figure[i].live === true) { //проверка условия, если падает и не был пойман, то игра оканчивается
 //                    console.log('game over');
                     model.gameOver();
-                    return false;
-                }
-
-            }
+                    break
+                }  
+            } 
+           
         });
-    }
+
+    }     
 };
 
 let controller = {
-    clearFigure: function() {
-        this.clear();
-         figure[this.num].live = false;
-
-    }
+clearFigure: function() {
+figure[this.num].live = false;
+field.stage.removeChild(this);
+}
 };
 
 play.loadGame();
-
