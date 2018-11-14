@@ -1,3 +1,5 @@
+//import * as PIXI from 'pixi.js'
+
 let width = window.innerWidth; //ширина экрана
 let height = window.innerHeight; // высота экрана
 let field; //поле для игры
@@ -35,12 +37,11 @@ let model = { //модель игры
         gameOverText.y = height / 2; 
         gameOverText.pivot.x = 50; 
         gameOverText.pivot.y = 50; 
+        
+        field.ticker.stop();
         field.stage.addChild(gameOverText); //вывод для пользователя
     }
 };
-
-//console.log(model, figure);
-
 
 let play = {
     loadGame: function(){
@@ -53,9 +54,9 @@ let play = {
             for (var i = 0; i < figuresAmount; i++) {
                 figure[i].position.y += gravity; //прибавление к одному котейке по оси Y значение заданной переменной gravity, чтобы он падал на столько вниз
                 if (figure[i].position.y > height && figure[i].live === true) { //проверка условия, если падает и не был пойман, то игра оканчивается
-//                    console.log('game over');
                     model.gameOver();
-                    break
+                    console.log('game over', figuresAmount);
+             
                 }  
             } 
            
