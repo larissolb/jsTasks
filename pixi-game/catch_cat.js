@@ -1,4 +1,5 @@
 //import * as PIXI from 'pixi.js'
+'use strict';
 
 let width = window.innerWidth; //ширина экрана
 let height = window.innerHeight; // высота экрана
@@ -6,6 +7,7 @@ let field; //поле для игры
 let gravity = 2; //чтобы коты двигались вниз
 let figuresAmount = 0; //счетчик созданных котов
 let figure = []; //массив хранящий котов
+let counter = 0; //счетчик спасенных котов
 
 let model = { //модель игры
     createCanvas: function() {
@@ -26,13 +28,15 @@ let model = { //модель игры
         figure.push(cat); //отправка в массив
         field.stage.addChild(cat); //чтобы кот появился на экране, в игре
         cat.on('pointerdown', controller.clearFigure.bind(cat));  // удаление кота при клике
-     },
+                  },
+ 
+             
     gameOver: function() {
         let style = new PIXI.TextStyle({ //стили текста
             fill: '0xffffff',
             fontSize: 36,
         }); 
-       let gameOverText = new PIXI.Text('Game Over :-(', style);
+       let gameOverText = new PIXI.Text('Спасенных котов: '+ counter, style);
         gameOverText.x = width / 2; //расположение на экране, чтобы по центру было 
         gameOverText.y = height / 2; 
         gameOverText.pivot.x = 50; 
@@ -69,6 +73,8 @@ let controller = {
 clearFigure: function() {
 figure[this.num].live = false;
 field.stage.removeChild(this);
+counter++;
+console.log(counter);
 }
 };
 
